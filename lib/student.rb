@@ -55,7 +55,7 @@ class Student
   
   def self.find_by_name(name)
     sql = <<-SQL
-    Select *From students Where name = ? Limit 1
+    Select *From students Where name = ?
     SQL
     
     DB[:conn].execute(sql, name).map do |row|
