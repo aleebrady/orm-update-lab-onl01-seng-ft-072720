@@ -50,7 +50,7 @@ class Student
     id = row[0]
     name =  row[1]
     row[2]
-    self.new(id,name,grade)
+    self.new(id, name, grade)
   end
   
   
