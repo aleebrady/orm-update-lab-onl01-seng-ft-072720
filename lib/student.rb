@@ -27,6 +27,15 @@ class Student
     DB[:conn].execute(sql)
   end
   
-  
+  def save
+    if self.id 
+      self.update
+    else
+      sql = <<-SQL
+      Insert Into students(name, grade)
+      Values(?, ?)
+      SQL
+      DB[:conn].execute(sql, self.name, self.grade)
+    end
 
 end
